@@ -1,0 +1,119 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  
+  @media (max-width: 599px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    .product-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  .toolbar{
+   background-color: #e3daca;
+   display: flex;
+   align-items: center;
+   min-height: 90px;
+  
+  }
+  .menu{
+      background-color: #d3ae48c5;
+      display: flex;
+      align-items: center;  
+  }
+  
+  .toolbar h1{
+     margin: auto;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .icons-right{
+      position: absolute;
+      right: 0px;
+  }
+  .content-wrapper {
+    display: flex;
+    height: 80vh; /* O el alto que desees */
+  }
+  
+  .product-grid {
+    flex: 1;
+   
+  }
+  
+  #cuadro {
+    width: 30%; /* O el ancho que prefieras */
+    margin-left: 20px;
+  }
+
+  .product-card {
+    /* Ajusta según sea necesario */
+    margin-bottom: 1rem;
+   max-height: fit-content;
+  }
+  
+  @media (min-width: 768px) {
+    .content-wrapper {
+      flex-direction: row;
+    }
+  
+    .product-grid {
+      width: 80%;
+    }
+  
+    #cuadro {
+      width: 20%;
+    }
+  }
+
+  .scroll-container {
+    height: 100%; /* O el alto que desees para el contenedor */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .scroll-list {
+    max-height: calc(100% - 40px); /* Ajusta este valor según el tamaño de tu encabezado */
+    overflow-y: auto;
+    padding-right: 10px; /* Para evitar que el contenido toque la barra de desplazamiento */
+  }
+  
+  .producto-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilo opcional para la barra de desplazamiento */
+  .scroll-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scroll-list::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  .scroll-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }

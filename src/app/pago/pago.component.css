@@ -1,0 +1,35 @@
+
+.toolbar{
+    background-color: #e3daca;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    
+   }
+   .menu{
+       background-color: #d3ae48c5;
+       display: flex;
+       align-items: center;  
+   }
+   
+   .toolbar h1{
+      margin: auto;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+   }
+   
+   .icons-right{
+       position: absolute;
+       right: 0px;
+       margin:20px ;
+   }
+
+  .producto-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 0.5px solid #eeeeee;
+    border-radius: 20px;
+  }
+    .cositas{
+        width: 60%;
+   
+    }

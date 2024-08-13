@@ -1,0 +1,136 @@
+    <div class="toolbar" >    
+        
+      <h1>Smile Shop</h1>
+      <div class="icons-right">
+          <button mat-icon-button  aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+            <button mat-icon-button routerLink="/pago"> <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"/>
+      </svg> </button>
+      <button mat-icon-button (click)="logout()">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M5 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm-2 9a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1Zm13-6a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4Z" clip-rule="evenodd"/>
+        </svg>
+        
+      </button>
+
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Especial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/lista">Registrar Productos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/modal">  Ver todos los productos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Todas las categorías
+              </a>
+              
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Aniversario</a></li>
+                <li><a class="dropdown-item" href="#">Bodas</a></li>
+                <li><a class="dropdown-item" href="#">Cumpleaños</a></li>
+                <li><a class="dropdown-item" href="#">Nacimientos</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Variedad</a></li>
+              </ul>
+            </li>
+          </ul>
+    
+          <form class="d-flex" role="search">
+            <button mat-icon-button > <mat-icon>place </mat-icon> </button>
+            <button mat-icon-button > <mat-icon>forum </mat-icon> </button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid my-5 mt-5">
+
+      <div class="content-wrapper">
+
+        <div class="product-grid">
+
+        @for (producto of producto; track producto.id) {
+        <mat-card class="product-card">
+
+    
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title> <img mat-card-xl-image  [src]="getImageSrc(producto.imagen)" alt="Imagen del producto" ></mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="testo" id="1">
+            <mat-card-title [ngStyle]="{'font-family': 'Amazon Ember, Arial, sans-serif'}">
+              {{ producto.nombre }}
+            </mat-card-title>          <p>Precio: <strong [ngStyle]="{'color':'#FF324D'}"> S/.{{ producto.precio }}</strong></p>
+          <p><strong [ngStyle]="{'color':'#687188'}">Stock:</strong> <strong [ngStyle]="{'color':'#03ad01','font-weight':'lighter',  'font-family' :'Poppins ,sans-serif'}"> {{ producto.stock }}  en stock</strong></p>
+          <br>
+          <p> <strong [ngStyle]="{'color':'#687188'}"> Descripción:</strong> </p>
+            <p>{{ producto.descripcion }}
+          </p>
+      
+        </div>  
+        
+        </mat-card-content>
+        <mat-card-footer> 
+            @if(producto.stock == 0){
+              <button mat-button > No hay stock</button>
+            }@else{
+              <button  mat-icon-button matTooltip="Agregar al carrito" 
+              matTooltipPosition="above" color="warn" aria-label="Example icon button with a home icon"  (click)="comprar(producto.id)">
+              <mat-icon >add_shopping_cart</mat-icon>
+              </button>
+            }
+         </mat-card-footer>
+      
+        </mat-card>
+        }
+        </div>
+        <div id="cuadro" class="justify-content-center scroll-container">
+          <h2>Compras</h2>
+          <div class="scroll-list">
+            @if (data && data.length > 0) {
+              @for (item of data; track item.id) {
+                <div class="producto-item">
+                  <p> <strong [ngStyle]="{'color':'#687188'}"> ID del Producto:</strong> {{item.idProducto}}</p>
+                  <p> <strong [ngStyle]="{'color':'#687188'}"> Cantidad:</strong> {{item.cantidad}}</p>
+                  @if (productoDetails[item.idProducto]) {
+                    <p> <strong [ngStyle]="{'color':'#687188'}">  Nombre:</strong> {{productoDetails[item.idProducto].nombre}}</p>
+                    <p> <strong [ngStyle]="{'color':'#687188'}">  Detalles:  </strong>{{productoDetails[item.idProducto].descripcion}}</p>
+                    <p> <strong [ngStyle]="{'color':'#687188'}"> Precio Pagar:</strong> <strong [ngStyle]="{'color':'#FF324D'}"> S/. {{(productoDetails[item.idProducto].precio * item.cantidad) | number: '1.2-2' }} </strong> </p>
+                  } @else {
+                    <p>Cargando detalles del producto...</p>
+                  }
+                </div>
+              }
+            } @else {
+              <p>No hay productos en el carrito</p>
+            }
+          </div>
+          
+          @if (data && data.length > 0) {
+            <div class="d-flex justify-content-center justify-content-end gap-2">
+              <button mat-flat-button color="primary" routerLink="/pago" >Pagar Carrito</button>
+              <button mat-flat-button color="accent" (click)=borrar()>Borrar Carrito</button>
+            </div>
+          }
+        </div>
+    </div>

@@ -1,0 +1,64 @@
+<div class="container my-5 ">
+    <h2 class="mb-5">Nuevo Producto</h2>
+   
+    <form [formGroup]="form" (ngSubmit)="create()">
+        <div class="mb-3">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Nombre" class="form-control"
+            formControlName="nombre">
+            <small class="text-danger" *ngIf="isFieldInvalid('nombre')">
+                {{ getErrorMessage('nombre') }}
+            </small>
+        </div>
+        
+        <div class="mb-3">
+            <label for="descripcion">Descripcion</label>
+            <input id="descripcion" type="text" placeholder="Descripcion" class="form-control"
+            formControlName="descripcion">
+            <small class="text-danger" *ngIf="isFieldInvalid('descripcion')">
+                {{ getErrorMessage('descripcion') }}
+            </small>
+        </div>
+        
+        <div class="mb-3">
+            <label for="stock">Stock</label>
+            <input id="stock" type="number" placeholder="stock" class="form-control"
+            formControlName="stock">
+            <small class="text-danger" *ngIf="isFieldInvalid('stock')">
+                {{ getErrorMessage('stock') }}
+            </small>
+        </div>
+        <div class="mb-3">
+            <label for="precio">Precio</label>
+            <input id="precio" type="number" placeholder="precio" class="form-control"
+            formControlName="precio">
+            <small class="text-danger" *ngIf="isFieldInvalid('precio')">
+                {{ getErrorMessage('precio') }}
+            </small>
+        </div>
+      
+        <div class="mb-3">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" class="form-select" formControlName="categoria">
+              <option value="">Seleccione una categoría</option>
+              @for (cat of categoria; track cat.id) {
+                <option [value]="cat.id">{{cat.nombre}}</option>
+              }
+            </select>
+            <small class="text-danger" *ngIf="isFieldInvalid('categoria')">
+                {{ getErrorMessage('categoria') }}
+            </small>
+        </div>
+          
+        <div class="mb-3">
+            <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        </div>
+
+        <div class="text-end">
+            <button type="button" class="btn btn-secondary" routerLink="/lista">Cancelar</button>
+            <button class="btn btn-primary ms-2">Nuevo</button>
+        </div>
+    </form>
+
+    <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+</div>

@@ -1,0 +1,36 @@
+<body>
+    <div class="row full-height">
+        <!-- Left Side (Form) -->
+        <div class="col-md-3 d-flex align-items-center justify-content-center">
+            <div>
+                <h2>Iniciar Sesión</h2>
+                <form [formGroup]="form" (ngSubmit)="login()">
+                    <div class="mb-3">
+                        <label for="usuario">Usuario</label>
+                        <input id="usuario " type="text" formControlName="usuario" placeholder="Ingrese usuario" class="form-control">
+                        <small class="text-light " *ngIf="isFieldInvalid('usuario')">
+                            {{ getErrorMessage('usuario') }}
+                        </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contraseña">Contraseña</label>
+                        <input id="contraseña" type="password" formControlName="contraseña" placeholder="Ingrese contraseña" class="form-control">
+                        <small class="text-light " *ngIf="isFieldInvalid('contraseña')">
+                            {{ getErrorMessage('contraseña') }}
+                        </small>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success" type="submit">Ingresar</button>
+                        <button class="btn btn-primary" type="button" routerLink="/registra">Registrar Usuario</button>
+                    </div>
+                </form>
+                <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+            </div>
+        </div>
+
+        <!-- Right Side (Image) -->
+        <div class="col-md-9 p-0">
+            <img src="https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg" class="img-fluid w-100 h-100" alt="Iniciar Sesion">
+        </div>
+    </div>
+</body>

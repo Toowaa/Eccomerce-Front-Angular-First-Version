@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <h2 class="mb-5">
+        @if(categoria){Editar Categoria}@else{Nueva Categoria}</h2>
+        @if(form){
+            <form [formGroup]="form" (ngSubmit)="create()" >
+                <div class="mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" placeholder="Nombre de la Categoria" class="form-control" formControlName="nombre">
+                    <small class="text-danger " *ngIf="isFieldInvalid('nombre')">
+                        {{ getErrorMessage('nombre') }}
+                    </small>
+                </div>
+                <div class="mb-3">
+                    <label for="categoria">Descripcion</label>
+                    <input id="categoria" type="text" placeholder="Descripcion de la Categoria" class="form-control" formControlName="categoria">
+                    <small class="text-danger " *ngIf="isFieldInvalid('categoria')">
+                        {{ getErrorMessage('categoria') }}
+                    </small>   
+                </div>    
+                <div class="text-end">
+                    <button type="button" class="btn btn-secondary" routerLink="/categoria">Cancelar</button>
+        
+                    <button class="btn btn-primary ms-2">@if(categoria){Actualizar Categoria}@else {Nuevo}</button>
+                </div>
+            </form>
+            <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+        }
+</div>

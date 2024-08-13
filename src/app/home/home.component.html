@@ -1,0 +1,263 @@
+<div class="toolbar" >    
+    
+  <h1>Smile Shop</h1>
+  <div class="icons-right">
+      <button mat-icon-button  aria-label="Example icon button with a home icon">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="/pago"> <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"/>
+  </svg> </button>
+  <button mat-icon-button (click)="logout()">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M5 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Zm-2 9a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1Zm13-6a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4Z" clip-rule="evenodd"/>
+    </svg>
+    
+  </button>
+
+  
+
+
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/home">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Especial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lista">Registrar Productos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/modal">  Ver todos los productos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Todas las categorías
+          </a>
+          
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Aniversario</a></li>
+            <li><a class="dropdown-item" href="#">Bodas</a></li>
+            <li><a class="dropdown-item" href="#">Cumpleaños</a></li>
+            <li><a class="dropdown-item" href="#">Nacimientos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Variedad</a></li>
+          </ul>
+        </li>
+      </ul>
+ 
+      <form class="d-flex" role="search">
+        <button mat-icon-button > <mat-icon>place </mat-icon> </button>
+        <button mat-icon-button > <mat-icon>forum </mat-icon> </button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../../assets/imagenes/carrusel1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../../../assets/imagenes/carrusel2.jpg" class="d-block w-100" alt="Descripción">
+    </div>
+    <div class="carousel-item">
+      <img src="../../../../assets/imagenes/carrusel3.jpg" class="d-block w-100" alt="3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="card-container">   
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title> <img mat-card-xl-image src="../../../../assets/imagenes/producto1.jpg" ></mat-card-title>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+              <mat-card-title> Regalos dedicados para ti</mat-card-title>
+              <mat-card-subtitle >ver mas</mat-card-subtitle>
+          </mat-card-content>
+          <mat-card-footer class="text-center my-2"><button    mat-flat-button    color="warn" routerLink="/modal" >Ver Productos</button></mat-card-footer>
+
+        </mat-card>
+
+        
+        <mat-card class="example-card">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title> <img mat-card-xl-image src="../../../../assets/imagenes/regalopapa1.jpg" ></mat-card-title>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+              <mat-card-title> Dale amor a ese especial</mat-card-title>
+              <mat-card-subtitle >ver mas</mat-card-subtitle>
+          </mat-card-content>
+          <mat-card-footer class="text-center my-2"><button    mat-flat-button    color="warn" routerLink="/modal" >Ver Productos</button></mat-card-footer>
+        </mat-card>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title-group>
+                  <mat-card-title> <img mat-card-xl-image src="../../../../assets/imagenes/regalopapa2.jpg" ></mat-card-title>
+                </mat-card-title-group>
+              </mat-card-header>
+              <mat-card-content>
+                  <mat-card-title> Siempre junto a ti</mat-card-title>
+                  <mat-card-subtitle >ver mas</mat-card-subtitle>
+                </mat-card-content>
+                <mat-card-footer class="text-center my-2"><button    mat-flat-button    color="warn" routerLink="/modal" >Ver Productos</button></mat-card-footer>
+
+            </mat-card>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title-group>
+                      <mat-card-title> <img mat-card-xl-image src="../../../../assets/imagenes/regalovinos1.jpg" ></mat-card-title>
+                    </mat-card-title-group>
+                  </mat-card-header>
+                  <mat-card-content>
+                      <mat-card-title> Regalo con vinos</mat-card-title>
+                      <mat-card-subtitle >ver mas</mat-card-subtitle>
+                    </mat-card-content>
+                    <mat-card-footer class="text-center my-2"><button    mat-flat-button    color="warn" routerLink="/modal" >Ver Productos</button></mat-card-footer>
+
+             </mat-card>
+
+    </div>
+       
+    <div class="card " >
+      <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+       
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+ 
+        
+      
+          <div>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+      
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>SMILE SHOP
+                </h6>
+                <p>
+                  En Smile Shop, nuestra misión es crear momentos de alegría y conexión a través de regalos personalizados que inspiran sonrisas y
+                   emociones genuinas. 
+
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Productos
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Boda</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Aniversario</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Promociones</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Cumpleaños</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                Links
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Privacidad</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Configuracion</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Ordenes</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Ayuda</a>
+                </p>
+              </div>
+           
+      
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                <p><i class="fas fa-home me-3"></i> Santiago de Surco,122 PE</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  Smileshopregalospersonalizados
+                </p>
+                <p><i class="fas fa-phone me-3"></i>RUC: 20606455471
+                </p>
+               
+              </div>
+             
+            </div>
+           
+          </div>
+        </section>
+        
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2023 Copyright:
+          <a class="text-reset fw-bold" href="https://www.facebook.com/marcenavedashop/">SmileShop.com</a>
+        </div>
+      </footer>
+    </div>
+
+
+    <router-outlet></router-outlet>

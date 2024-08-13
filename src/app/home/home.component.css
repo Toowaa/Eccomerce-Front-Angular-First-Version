@@ -1,0 +1,77 @@
+.toolbar {
+    background-color: #e3daca;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+}
+
+.menu {
+    background-color: #d3ae48c5;
+    display: flex;
+    align-items: center;  
+}
+
+.toolbar h1 {
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.icons-right {
+    position: absolute;
+    right: 0px;
+    margin: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #e3daca;
+    padding: 20px;
+    margin: auto;
+}
+
+.example-card {
+    background-color: rgba(255, 255, 255, 0.925);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex: 1 1 280px;
+    max-width: 280px;
+    margin-bottom: 20px;
+}
+
+.example-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+@media (max-width: 1200px) {
+    .card-container {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .example-card {
+        flex-basis: calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .example-card {
+        flex-basis: 100%;
+        max-width: 280px;
+    }
+}
